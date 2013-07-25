@@ -1,0 +1,35 @@
+Message Patterns
+=========================
+
+
+Message Types
+------------------------
+Command              - Invoke command on remote system
+Document             - Distribute data amongst components
+Event                - Notify components about an event
+Request/Reply        - Two way communication
+
+
+Message Channels
+----------------------
+Point to Point       -
+Pub/Sub              -
+Data Type            - Discover contents of message
+Dead Letter          - Failed messages
+Guaranteed Delivery  - Participans not online
+Message Bus          - Coordinate with loose coupling
+
+
+Notes
+---------------------
+Control Bus         - Start / Stop / Configure
+Detour              - Reroute / Process / Debug
+Wire Tap            - 
+
+
+URL
+--------------------
+http://www.slideshare.net/old_sound/messaging-patterns
+http://msdn.microsoft.com/en-us/library/aa480027.aspx
+http://camel.apache.org/enterprise-integration-patterns.html
+http://rubyamqp.info/articles/patterns_and_use_cases/

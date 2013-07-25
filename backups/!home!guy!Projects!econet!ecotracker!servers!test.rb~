@@ -1,0 +1,14 @@
+
+require 'amqp'
+require 'eventmachine'
+
+
+EM.run {
+
+  EM.add_periodic_timer(1) {
+
+    puts '.'
+    
+  }
+
+}
