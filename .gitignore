@@ -1,1 +1,6 @@
-elpa/
+places
+ac-comphist.dat
+projectile-bookmarks.eld
+.smex-items
+backups/
+auto-save-list/
