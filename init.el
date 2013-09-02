@@ -63,6 +63,15 @@
                  (make-string 2 ?#)))
 
 
+;; ------------------------------------------------------------------------------
+;; Set indentations to 2 spaces in coffeescript
+(defun coffee-custom ()
+  "coffee-mode-hook"
+  (set (make-local-variable 'tab-width) 2))
+
+(add-hook 'coffee-mode-hook 'coffee-custom)
+
+
 
 ;; ------------------------------------------------------------------------------
 (custom-set-variables

@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <13/07/17 08:38:23 /home/guy/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <13/08/20 14:06:09 /home/guy/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -9,18 +9,11 @@
    ("/bin" "/usr/bin" "/usr/sbin" "/usr/local/bin"))
   ("remote-shell" "/bin/sh")
   ("busybox" nil)
-  ("~" "/home/ubuntu")
-  ("ls" "/bin/ls --color=never")
-  ("ls-dired" t)
   ("stat" "\\stat")
   ("file-exists" "test -e")
   ("id" "/usr/bin/id")
   ("gid-integer" 1000)
-  ("readlink" "\\readlink")
-  ("local-encoding" base64-encode-region)
-  ("local-decoding" base64-decode-region)
-  ("remote-encoding" "base64")
-  ("remote-decoding" "base64 -d -i")
   ("perl-file-spec" t)
   ("perl-cwd-realpath" t)
-  ("perl" "\\perl")))
+  ("perl" "\\perl")
+  ("~" "/home/ubuntu")))
