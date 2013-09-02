@@ -1,1 +1,0 @@
-("~/Projects/econet/ecobill/" "~/Projects/econet/ecotracker/" "~/Projects/econet/gems/")
