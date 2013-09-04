@@ -17,12 +17,20 @@
 
 ;; ------------------------------------------------------------------------------
 ;; disable backup
+;; ------------------------------------------------------------------------------
 (setq backup-inhibited t)
 
 ;; ------------------------------------------------------------------------------
 ;; Set default tab size to 2 spaces
 ;; ------------------------------------------------------------------------------
 (setq default-tab-width 2) 
+
+
+;; ------------------------------------------------------------------------------
+;; Setup fullscreen mode
+;; ------------------------------------------------------------------------------
+(fullscreen-mode)
+
 
 ;; ------------------------------------------------------------------------------
 ;; Setup IDO mode
@@ -39,6 +47,7 @@
 
 ;; ------------------------------------------------------------------------------
 ;; Setup GoLang Mode
+
 ;; ------------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/go/")
 (require 'go-mode)
@@ -87,79 +96,79 @@
  '(custom-safe-themes (quote ("bb1eaf74fcfa24c8868078cac73abba4138d0ddb7f11f44d7e8f849edbf8b912" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
 (custom-set-faces )
 
-;; ------------------------------------------------------------------------------
-;; Setup Email
-;; ------------------------------------------------------------------------------
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e/")
-(require 'mu4e)
+;; ;; ------------------------------------------------------------------------------
+;; ;; Setup Email
+;; ;; ------------------------------------------------------------------------------
+;; (add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e/")
+;; (require 'mu4e)
 
-;; default
-(setq mu4e-maildir "~/Maildir")
-(setq mu4e-drafts-folder "/[Gmail].Drafts")
-(setq mu4e-sent-folder   "/[Gmail].Sent Mail")
-(setq mu4e-trash-folder  "/[Gmail].Trash")
+;; ;; default
+;; (setq mu4e-maildir "~/Maildir")
+;; (setq mu4e-drafts-folder "/[Gmail].Drafts")
+;; (setq mu4e-sent-folder   "/[Gmail].Sent Mail")
+;; (setq mu4e-trash-folder  "/[Gmail].Trash")
 
-;; don't save message to Sent Messages, Gmail/IMAP takes care of this
-(setq mu4e-sent-messages-behavior 'delete)
+;; ;; don't save message to Sent Messages, Gmail/IMAP takes care of this
+;; (setq mu4e-sent-messages-behavior 'delete)
 
-;; setup some handy shortcuts
-;; you can quickly switch to your Inbox -- press ``ji''
-;; then, when you want archive some messages, move them to
-;; the 'All Mail' folder by pressing ``ma''.
+;; ;; setup some handy shortcuts
+;; ;; you can quickly switch to your Inbox -- press ``ji''
+;; ;; then, when you want archive some messages, move them to
+;; ;; the 'All Mail' folder by pressing ``ma''.
 
-(setq mu4e-maildir-shortcuts
-      '( ("/INBOX"               . ?i)
-         ("/[Gmail].Sent Mail"   . ?s)
-         ("/[Gmail].Trash"       . ?t)
-         ("/[Gmail].All Mail"    . ?a)))
+;; (setq mu4e-maildir-shortcuts
+;;       '( ("/INBOX"               . ?i)
+;;          ("/[Gmail].Sent Mail"   . ?s)
+;;          ("/[Gmail].Trash"       . ?t)
+;;          ("/[Gmail].All Mail"    . ?a)))
 
-;; allow for updating mail using 'U' in the main view:
-(setq mu4e-get-mail-command "offlineimap")
+;; ;; allow for updating mail using 'U' in the main view:
+;; (setq mu4e-get-mail-command "offlineimap")
 
-;; something about ourselves
-(setq
- user-mail-address "guy.vandenberg@microsmart.co.za"
- user-full-name  "Guy van den Berg"
- message-signature
- (concat
-  "Guy van den Berg\n"
-  "Email: guy.vandenberg@microsmart.co.za\n"
-  "Cell: +27 84 678 0045\n"
-  "\n"))
+;; ;; something about ourselves
+;; (setq
+;;  user-mail-address "guy.vandenberg@microsmart.co.za"
+;;  user-full-name  "Guy van den Berg"
+;;  message-signature
+;;  (concat
+;;   "Guy van den Berg\n"
+;;   "Email: guy.vandenberg@microsmart.co.za\n"
+;;   "Cell: +27 84 678 0045\n"
+;;   "\n"))
 
-;; sending mail -- replace USERNAME with your gmail username
-;; also, make sure the gnutls command line utils are installed
-;; package 'gnutls-bin' in Debian/Ubuntu
+;; ;; sending mail -- replace USERNAME with your gmail username
+;; ;; also, make sure the gnutls command line utils are installed
+;; ;; package 'gnutls-bin' in Debian/Ubuntu
 
-(require 'smtpmail)
+;; (require 'smtpmail)
+;; ;; (setq message-send-mail-function 'smtpmail-send-it
+;; ;;       starttls-use-gnutls t
+;; ;;       smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+;; ;;       smtpmail-auth-credentials
+;; ;;       '(("smtp.gmail.com" 587 "renws1990@gmail.com" nil))
+;; ;;       smtpmail-default-smtp-server "smtp.gmail.com"
+;; ;;       smtpmail-smtp-server "smtp.gmail.com"
+;; ;;       smtpmail-smtp-service 587)
+
+;; ;; alternatively, for emacs-24 you can use:
 ;; (setq message-send-mail-function 'smtpmail-send-it
-;;       starttls-use-gnutls t
-;;       smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-;;       smtpmail-auth-credentials
-;;       '(("smtp.gmail.com" 587 "renws1990@gmail.com" nil))
-;;       smtpmail-default-smtp-server "smtp.gmail.com"
-;;       smtpmail-smtp-server "smtp.gmail.com"
-;;       smtpmail-smtp-service 587)
+;;     smtpmail-stream-type 'starttls
+;;     smtpmail-default-smtp-server "smtp.gmail.com"
+;;     smtpmail-smtp-server "smtp.gmail.com"
+;;     smtpmail-smtp-service 587)
 
-;; alternatively, for emacs-24 you can use:
-(setq message-send-mail-function 'smtpmail-send-it
-    smtpmail-stream-type 'starttls
-    smtpmail-default-smtp-server "smtp.gmail.com"
-    smtpmail-smtp-server "smtp.gmail.com"
-    smtpmail-smtp-service 587)
+;; ;; don't keep message buffers around
+;; (setq message-kill-buffer-on-exit t)
 
-;; don't keep message buffers around
-(setq message-kill-buffer-on-exit t)
+;; ;; fetch mail every x seconds
+;; (setq mu4e-update-interval 300)
 
-;; fetch mail every x seconds
-(setq mu4e-update-interval 300)
+;; ;; enable inline images
+;; (setq mu4e-view-show-images t)
+;; ;; use imagemagick, if available
+;; (when (fboundp 'imagemagick-register-types)
+;;       (imagemagick-register-types))
 
-;; enable inline images
-(setq mu4e-view-show-images t)
-;; use imagemagick, if available
-(when (fboundp 'imagemagick-register-types)
-      (imagemagick-register-types))
-
-;; enable html view
-(setq mu4e-html2text-command  "w3m -dump -T text/html") 
-(setq mu4e-view-prefer-html t)
+;; ;; enable html view
+;; (setq mu4e-html2text-command  "w3m -dump -T text/html") 
+;; (setq mu4e-view-prefer-html t)
